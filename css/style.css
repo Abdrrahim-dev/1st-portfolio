@@ -1,0 +1,402 @@
+/* global properties */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+/* variables */
+:root {
+  --main-clr: #252525;
+  --second-clr: #ff0000;
+  --third-clr: #414141;
+  --fouth-clr: #af0404;
+  --sec-title-size: 70px;
+  --main-font: "Poppins", sans-serif;
+  --title-font: "Playball", cursive;
+}
+/* common elements */
+a {
+  text-decoration: none;
+  color: #000;
+}
+::selection {
+  background-color: var(--fouth-clr);
+  color: #fff;
+}
+.container {
+  margin: auto;
+  position: relative;
+}
+@media (min-width: 525px) {
+  .container {
+    width: 525px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 700px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 990px;
+  }
+}
+body {
+  min-height: 100vh;
+  font-family: var(--main-font);
+}
+/* start header */
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  font-size: 40px;
+  color: var(--second-clr);
+  font-weight: 700;
+  text-shadow: 0 0px 15px #000;
+}
+header .container nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .container nav a {
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 0 10px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-transform: capitalize;
+}
+header .container nav a.active {
+  background: radial-gradient(var(--second-clr), var(--fouth-clr));
+}
+header .container nav a:hover {
+  background: radial-gradient(var(--second-clr), var(--fouth-clr));
+}
+header .container nav a i {
+  font-size: 16px;
+  margin-left: 10px;
+}
+/* end header */
+/* start home */
+.home {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(var(--third-clr), var(--main-clr));
+  /* border-bottom: 2px solid var(--third-clr); */
+}
+.home .photo {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+}
+.home .photo svg {
+  width: 100%;
+  position: absolute;
+  bottom: -150px;
+}
+.home .photo img {
+  width: 55%;
+  position: absolute;
+}
+.home .photo .label {
+  position: absolute;
+  top: 140px;
+  right: 60px;
+  transform: rotate(25deg);
+}
+.home .photo .label img {
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  transform: translateX(-100%);
+  width: 70px;
+}
+.home .photo .label h3 {
+  color: #fff;
+  font-size: 25px;
+}
+.home .text {
+  margin-top: 160px;
+  padding-left: 40px;
+}
+.home .text h2 {
+  font-size: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.6;
+  text-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+.home .text h2 span {
+  color: var(--second-clr);
+}
+.home .text .send-message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  margin-top: 40px;
+}
+.home .text .send-message p {
+  font-size: 22px;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 200;
+}
+.home .text .send-message p i {
+  color: var(--second-clr);
+  margin-left: 10px;
+}
+.home .text .send-message button {
+  border: 1px solid var(--second-clr);
+  outline: none;
+  background-color: var(--second-clr);
+  border-radius: 20px;
+  position: relative;
+}
+.home .text .send-message button a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  z-index: 999;
+  position: relative;
+}
+.home .text .send-message button a i {
+  margin-left: 3px;
+}
+.home .text .send-message button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  animation: scale 1s ease-in-out infinite;
+  box-shadow: 0 0 10px var(--second-clr);
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* end home */
+/* start portfolio */
+.portfolio {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 100px;
+  background: radial-gradient(var(--third-clr), var(--main-clr));
+}
+h2.title {
+  font-family: var(--title-font);
+  font-size: var(--sec-title-size);
+  text-transform: capitalize;
+  margin-left: 50px;
+  padding-bottom: 10px;
+  color: #fff;
+  position: relative;
+}
+h2.title::before {
+  content: "";
+  width: 150px;
+  height: 3px;
+  background-color: var(--second-clr);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+h2.title span {
+  color: var(--second-clr);
+  font-size: 90px;
+}
+.container > p {
+  font-size: 22px;
+  color: #fff;
+  text-transform: capitalize;
+  margin-top: 20px;
+  font-weight: 200;
+}
+.portfolio .container button.filter {
+  border: none;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.portfolio .container button.filter i {
+  margin-left: 10px;
+}
+.portfolio .container .images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px);
+  grid-template-rows: repeat(auto-fill, 230px);
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+}
+.portfolio .container .images .card {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+.portfolio .container .images .card img {
+  max-width: 100%;
+}
+.portfolio .container .images .card .details {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--fouth-clr);
+  padding: 20px 15px;
+  transition: 0.5s;
+}
+.portfolio .container .images .card .details p {
+  color: #fff;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+.portfolio .container .images .card .details button {
+  border: 1px solid #fff;
+  outline: none;
+  background-color: #fff;
+  position: relative;
+  color: #000;
+  font-size: 11px;
+  padding: 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.portfolio .container .images .card:hover .details {
+  transform: translateY(0);
+}
+/* end portfolio */
+/* start about */
+.about {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 100px;
+  background: radial-gradient(var(--third-clr), var(--main-clr));
+}
+.about h3 {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 25px;
+  padding-top: 100px;
+}
+.about .container .info {
+  color: #fff;
+  line-height: 1.6;
+  font-size: 24px;
+  font-weight: 200;
+  margin-top: 30px;
+  text-indent: 30px;
+}
+.about .container .info span {
+  color: var(--second-clr);
+  font-weight: 500;
+}
+.about .container .services {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-rows: repeat(auto-fill, 300px);
+  margin-top: 50px;
+  gap: 30px;
+  justify-content: center;
+}
+.about .container .services .card {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background-color: var(--main-clr);
+  box-shadow: 0 0 10px var(--third-clr);
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.about .container .services .card i {
+  color: var(--second-clr);
+  font-size: 50px;
+  margin-top: 50px;
+}
+.about .container .services .card h4 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
+}
+.about .container .services .card p {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 200;
+  line-height: 1.6;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.about .container .services .card button.more {
+  border: none;
+  background-color: var(--second-clr);
+  outline: none;
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  font-size: 12px;
+  transition: 0.5s;
+}
+.about .container .services .card button.more a {
+  padding: 5px 10px;
+  color: #fff;
+  display: block;
+}
+.about .container .services .card:hover button.more {
+  top: 10px;
+}
+/* end about */
+.pie-chart {
+  background: conic-gradient(#4caf50 5%, #fff 0);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
