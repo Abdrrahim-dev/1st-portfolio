@@ -393,10 +393,108 @@ h2.title span {
 .about .container .services .card:hover button.more {
   top: 10px;
 }
-/* end about */
-.pie-chart {
-  background: conic-gradient(#4caf50 5%, #fff 0);
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
+.about .container .skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-template-rows: repeat(auto-fill, 150px);
+  gap: 80px;
+  margin-top: 100px;
+  justify-content: center;
 }
+.about .container .skills .progress {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--second-clr) calc(var(--percent) * 1%),
+    #000 0
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .container .skills .progress .circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  position: relative;
+}
+.about .container .skills .progress .circle .skill {
+  text-align: center;
+}
+/* end about */
+/* start contact */
+.contact {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: radial-gradient(var(--third-clr), var(--main-clr));
+}
+.contact .container form {
+  margin-top: 50px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contact .container form .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.contact .container form input:not(input[type="submit"]),
+.contact .container form textarea {
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  background-color: transparent;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.contact .container form input[type="email"] {
+  display: block;
+  width: 100%;
+}
+.contact .container form input::placeholder,
+.contact .container form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 200;
+}
+.contact .container form textarea {
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+}
+.contact .container form input[type="submit"] {
+  padding: 10px 25px;
+  color: #fff;
+  background-color: var(--second-clr);
+  cursor: pointer;
+  border: none;
+}
+/* end contact */
+/* start footer */
+footer {
+  text-align: center;
+  background-color: var(--fouth-clr);
+  color: #fff;
+  padding: 20px 0;
+}
+footer span {
+  color: #000;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+/* end footer */
